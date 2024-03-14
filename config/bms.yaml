@@ -1,0 +1,67 @@
+parameter_node:
+  ros__parameters:
+    topics: ["current", "voltage", "remaining_capacity", "full_charge_capacity", "temperature", "battery_charging", "battery_full", "battery_learning", "battery_almost_empty"]
+    can_device: "can1"
+    bms_id_to_poll: 15
+    poll_frequency_hz: 20
+    
+    diagnostics:
+      id: 0x01
+      fields:
+        name: "battery_empty"
+        offset: 0
+        len: 2
+        bit_mask: 0x01
+        name: "battery_almost_empty"
+        offset: 0
+        len: 2
+        bit_mask: 0x02
+      id: 0x02
+      fields:
+        name: "current"
+        offset: 0
+        len: 2
+        is_signed: true
+        factor: 0.01
+        unit: "A"  
+    
+    # No good
+    # diagnostics:
+    #   id: 0x01
+    #   fields:
+    #   - name: "battery_empty"
+    #       offset: 0
+    #       len: 2
+    #       bit_mask: 0x01
+    #   - name: "battery_almost_empty"
+    #       offset: 0
+    #       len: 2
+    #       bit_mask: 0x02
+    #   id: 0x02
+    #   fields:
+    #   - name: "current"
+    #       offset: 0
+    #       len: 2
+    #       is_signed: true
+    #       factor: 0.01
+    #       unit: "A"
+
+    # diagnostics:
+    #   id: 0x01
+    #   fields:
+    #     name: "battery_empty"
+    #     offset: 0
+    #     len: 2
+    #     bit_mask: 0x01
+    #     name: "battery_almost_empty"
+    #     offset: 0
+    #     len: 2
+    #     bit_mask: 0x02
+    #   id: 0x02
+    #   fields:
+    #     name: "current"
+    #     offset: 0
+    #     len: 2
+    #     is_signed: true
+    #     factor: 0.01
+    #     unit: "A"
